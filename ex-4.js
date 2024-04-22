@@ -374,4 +374,23 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+function checkMember(mem) {
+  return mem.filter((member) => member.member !== null);
+}
+function checkNames(names) {
+  return names.map((checkName) => checkName.member.name);
+}
+function uniqueName(name) {
+  let unique = [];
+  for (let i = 0; i < name.length; i++) {
+    if (unique.indexOf(name[i]) === -1) {
+      unique.push(name[i]);
+    }
+  }
+  return unique.length;
+}
+const billMembers = checkMember(bills);
+let nameMembers = checkNames(billMembers);
+
+const totalMembers = uniqueName(nameMembers);
+console.log("Unique Members Count: "+totalMembers)

@@ -374,4 +374,13 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+function checkMember(mem) {
+  return mem.filter((member) => member.member !== null);
+}
+function checkNames(names) {
+  return names.map((checkName) => checkName.member.name);
+}
+
+const billMembers = checkMember(bills);
+let nameMembers = checkNames(billMembers);
+console.log(nameMembers);
